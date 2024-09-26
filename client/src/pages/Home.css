@@ -1,0 +1,35 @@
+body {
+    background-color: aliceblue;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+}
+
+.box>h1{
+    margin: 2rem;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    /* height: 100vh; */
+}
+
+.entry {
+    border-left: 3px solid blue;
+}
+
+input {
+    margin-left: 1.5rem;
+}
+
+label {
+    margin-left: 1.5rem;
+}
