@@ -43,7 +43,8 @@ function Home() {
                     <form action="/submit" onSubmit={print} className="entry">
                         <label htmlFor="URL">Enter your URL Here</label><br /><br />
                         <input type="text" onChange={handleChange} placeholder="enter Here" name="URL" /><br /><br />
-                        <input type="submit" value="Generate" />
+                        {/* <input type="submit" value="Generate" /> */}
+                        <button type="button" class="btn btn-secondary">Generate</button>
                     </form>
                 </div>
             </div>
