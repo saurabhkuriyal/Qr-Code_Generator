@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 
 const corsOptions={
-    origin:"https://qr-code-generator-kuriyal.netlify.app/",
+    origin:"https://sprightly-kelpie-048bd4.netlify.app",
     method:"GET,POST,PUT,PATCH,DELETE,HEAD",
     credentials:true
 }
@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 import qr from "qr-image";
 
 app.get("/", (req, res) => {
-    res.send(<h1>Hello form server</h1>)
+    res.send(<h1>Hello from server</h1>)
 })
 
 app.post("/submit", (req, res) => {
