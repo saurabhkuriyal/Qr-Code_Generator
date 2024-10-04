@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 import qr from "qr-image";
 
 app.get("/", (req, res) => {
-    res.send(<h1>Hello from server</h1>)
+    res.send("hello from server")
 })
 
 app.post("/submit", (req, res) => {
