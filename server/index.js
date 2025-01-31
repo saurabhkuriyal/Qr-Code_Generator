@@ -1,11 +1,13 @@
 import bodyParser from "body-parser";
 import cors from "cors";
+import dotenv from "dotenv";
 import express from "express";
-require("dotenv").config();
 const app = express();
+
+
+dotenv.config();
+
 const port = process.env.PORT;
-
-
 app.use(cors());
 
 app.use(express.json());
@@ -33,7 +35,7 @@ app.post("/submit", (req, res) => {
     res.send({src: qr_src}).status(201);
     } catch (error) {
 
-        console.log(error);
+        //console.log(error);
         res.status(500).send({success:false})
         
         

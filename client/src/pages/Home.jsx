@@ -18,7 +18,7 @@ function Home() {
         event.preventDefault();
         try {
             const response = await axios.post('http://localhost:3000/submit', { data: url });
-            console.log(response);
+            //console.log(response);
             
 
             const qrCode = response.data.src;
@@ -26,7 +26,7 @@ function Home() {
             navigate('/display_qr', { state: { qrCode } });
 
         } catch (error) {
-            console.log(error);
+            //console.log(error);
 
         }
     }
