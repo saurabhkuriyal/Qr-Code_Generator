@@ -17,7 +17,7 @@ function Home() {
     async function print(event) {
         event.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3000/submit', { data: url });
+            const response = await axios.post('https://qr-code-generator-bmxw.onrender.com/submit', { data: url });
             //console.log(response);
             
 
