@@ -17,7 +17,9 @@ function Home() {
     async function print(event) {
         event.preventDefault();
         try {
-            const response = await axios.post('https://qr-code-generator-4oni.onrender.com/submit', { data: url });
+            const response = await axios.post('http://localhost:3000/submit', { data: url });
+            console.log(response);
+            
 
             const qrCode = response.data.src;
 
@@ -40,11 +42,11 @@ function Home() {
                 <h1>Generate you Qr here...</h1>
                 <div className="form">
                     <h2>Enter your URL</h2>
-                    <form action="/submit" onSubmit={print} className="entry">
+                    <form  onSubmit={print} className="entry">
                         <label htmlFor="URL">Enter your URL Here</label><br /><br />
                         <input type="text" onChange={handleChange} placeholder="enter Here" name="URL" /><br /><br />
-                        {/* <input type="submit" value="Generate" /> */}
-                        <button type="button" class="btn btn-secondary">Generate</button>
+                        
+                        <button type="submit" className="btn btn-secondary">Generate</button>
                     </form>
                 </div>
             </div>

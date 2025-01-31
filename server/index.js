@@ -4,13 +4,8 @@ import express from "express";
 const app = express();
 const port = 3000;
 
-const corsOptions={
-    origin:"https://sprightly-kelpie-048bd4.netlify.app",
-    method:"GET,POST,PUT,PATCH,DELETE,HEAD",
-    credentials:true
-}
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(express.json());
 
@@ -23,7 +18,9 @@ app.get("/", (req, res) => {
 })
 
 app.post("/submit", (req, res) => {
-    const url = req.body.data;
+
+    try {
+        const url = req.body.data;
     // const url=req.body.URL;
     const qr_svg = qr.imageSync(url, { type: 'svg' });
 
@@ -33,6 +30,14 @@ app.post("/submit", (req, res) => {
     // res.status(201).json({message:"Success"});
     // res.render("result.ejs", { src: qr_src });
     res.send({src: qr_src}).status(201);
+    } catch (error) {
+
+        console.log(error);
+        res.status(500).send({success:false})
+        
+        
+    }
+    
 });
 
 

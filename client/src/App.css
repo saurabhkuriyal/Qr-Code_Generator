@@ -48,3 +48,7 @@
   height: 100vh;
   flex-direction: column;
 }
+
+.qrimage{
+  height: 300px;
+}
